@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>EaveVPN Configs</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      background: #0d1117;
+      color: #c9d1d9;
+      line-height: 1.6;
+      padding: 20px;
+    }
+    .container { max-width: 800px; margin: 0 auto; }
+    h1 {
+      color: #58a6ff;
+      text-align: center;
+      margin-bottom: 10px;
+      font-size: 2rem;
+    }
+    .subtitle {
+      text-align: center;
+      color: #8b949e;
+      margin-bottom: 30px;
+    }
+    .category {
+      background: #161b22;
+      border: 1px solid #30363d;
+      border-radius: 12px;
+      margin-bottom: 20px;
+      overflow: hidden;
+    }
+    .category-header {
+      background: #21262d;
+      padding: 15px 20px;
+      font-size: 1.1rem;
+      font-weight: 600;
+      color: #f0883e;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    .file-list { padding: 10px; }
+    .file-item {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 12px 15px;
+      margin: 5px 0;
+      background: #0d1117;
+      border-radius: 8px;
+      border: 1px solid #21262d;
+      transition: all 0.2s;
+    }
+    .file-item:hover {
+      border-color: #58a6ff;
+      background: #161b22;
+    }
+    .file-info { display: flex; align-items: center; gap: 12px; }
+    .file-icon { font-size: 1.3rem; }
+    .file-name { font-weight: 500; color: #e6edf3; }
+    .file-desc { font-size: 0.85rem; color: #8b949e; margin-top: 2px; }
+    .actions { display: flex; gap: 8px; }
+    .btn {
+      padding: 8px 16px;
+      border-radius: 6px;
+      text-decoration: none;
+      font-size: 0.85rem;
+      font-weight: 500;
+      transition: all 0.2s;
+      border: none;
+      cursor: pointer;
+    }
+    .btn-import {
+      background: #238636;
+      color: white;
+    }
+    .btn-import:hover { background: #2ea043; }
+    .btn-copy {
+      background: #1f6feb;
+      color: white;
+    }
+    .btn-copy:hover { background: #388bfd; }
+    .btn-view {
+      background: #21262d;
+      color: #c9d1d9;
+      border: 1px solid #30363d;
+    }
+    .btn-view:hover { background: #30363d; }
+    .url-box {
+      margin-top: 20px;
+      padding: 15px;
+      background: #161b22;
+      border-radius: 8px;
+      border: 1px solid #30363d;
+    }
+    .url-box h3 { color: #58a6ff; margin-bottom: 10px; }
+    .url-box code {
+      display: block;
+      padding: 10px;
+      background: #0d1117;
+      border-radius: 6px;
+      font-family: 'SF Mono', monospace;
+      font-size: 0.9rem;
+      color: #7ee787;
+      word-break: break-all;
+    }
+    .toast {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      background: #238636;
+      color: white;
+      padding: 12px 20px;
+      border-radius: 8px;
+      opacity: 0;
+      transition: opacity 0.3s;
+      pointer-events: none;
+    }
+    .toast.show { opacity: 1; }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>🔒 EaveVPN Configs</h1>
+    <p class="subtitle">Бесплатные конфигурации для обхода блокировок</p>
+
+    <!-- BLACK -->
+    <div class="category">
+      <div class="category-header">⚫ BLACK — Полный обход</div>
+      <div class="file-list">
+        <div class="file-item">
+          <div class="file-info">
+            <span class="file-icon">📄</span>
+            <div>
+              <div class="file-name">BLACK_SS+All_RUS</div>
+              <div class="file-desc">Shadowsocks — все сайты через VPN</div>
+            </div>
+          </div>
+          <div class="actions">
+            <button class="btn btn-copy" onclick="copyUrl('black/all')">📋 Копировать URL</button>
+            <a href="https://raw.githubusercontent.com/Kirillo4ka/eavevpn-configs/main/BLACK_SS%2BAll_RUS.txt" class="btn btn-view" target="_blank">👁 Просмотр</a>
+            <a href="https://raw.githubusercontent.com/Kirillo4ka/eavevpn-configs/main/BLACK_SS%2BAll_RUS.txt" class="btn btn-import">⬇ Импорт</a>
+          </div>
+        </div>
+        <div class="file-item">
+          <div class="file-info">
+            <span class="file-icon">📄</span>
+            <div>
+              <div class="file-name">BLACK_VLESS_RUS</div>
+              <div class="file-desc">VLESS — все сайты через VPN</div>
+            </div>
+          </div>
+          <div class="actions">
+            <button class="btn btn-copy" onclick="copyUrl('black/vless')">📋 Копировать URL</button>
+            <a href="https://raw.githubusercontent.com/Kirillo4ka/eavevpn-configs/main/BLACK_VLESS_RUS.txt" class="btn btn-view" target="_blank">👁 Просмотр</a>
+            <a href="https://raw.githubusercontent.com/Kirillo4ka/eavevpn-configs/main/BLACK_VLESS_RUS.txt" class="btn btn-import">⬇ Импорт</a>
+          </div>
+        </div>
+        <div class="file-item">
+          <div class="file-info">
+            <span class="file-icon">📱</span>
+            <div>
+              <div class="file-name">BLACK_VLESS_RUS_mobile</div>
+              <div class="file-desc">VLESS — оптимизирован для мобильных</div>
+            </div>
+          </div>
+          <div class="actions">
+            <button class="btn btn-copy" onclick="copyUrl('black/vless-mobile')">📋 Копировать URL</button>
+            <a href="https://raw.githubusercontent.com/Kirillo4ka/eavevpn-configs/main/BLACK_VLESS_RUS_mobile.txt" class="btn btn-view" target="_blank">👁 Просмотр</a>
+            <a href="https://raw.githubusercontent.com/Kirillo4ka/eavevpn-configs/main/BLACK_VLESS_RUS_mobile.txt" class="btn btn-import">⬇ Импорт</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- WHITE -->
+    <div class="category">
+      <div class="category-header">⚪ WHITE — Только заблокированные</div>
+      <div class="file-list">
+        <div class="file-item">
+          <div class="file-info">
+            <span class="file-icon">📄</span>
+            <div>
+              <div class="file-name">WHITE-CIDR-RU-all</div>
+              <div class="file-desc">CIDR-список — все российские IP</div>
+            </div>
+          </div>
+          <div class="actions">
+            <button class="btn btn-copy" onclick="copyUrl('white/cidr-all')">📋 Копировать URL</button>
+            <a href="https://raw.githubusercontent.com/Kirillo4ka/eavevpn-configs/main/WHITE-CIDR-RU-all.txt" class="btn btn-view" target="_blank">👁 Просмотр</a>
+            <a href="https://raw.githubusercontent.com/Kirillo4ka/eavevpn-configs/main/WHITE-CIDR-RU-all.txt" class="btn btn-import">⬇ Импорт</a>
+          </div>
+        </div>
+        <div class="file-item">
+          <div class="file-info">
+            <span class="file-icon">📄</span>
+            <div>
+              <div class="file-name">WHITE-CIDR-RU-checked</div>
+              <div class="file-desc">CIDR-список — проверенные IP</div>
+            </div>
+          </div>
+          <div class="actions">
+            <button class="btn btn-copy" onclick="copyUrl('white/cidr-checked')">📋 Копировать URL</button>
+            <a href="https://raw.githubusercontent.com/Kirillo4ka/eavevpn-configs/main/WHITE-CIDR-RU-checked.txt" class="btn btn-view" target="_blank">👁 Просмотр</a>
+            <a href="https://raw.githubusercontent.com/Kirillo4ka/eavevpn-configs/main/WHITE-CIDR-RU-checked.txt" class="btn btn-import">⬇ Импорт</a>
+          </div>
+        </div>
+        <div class="file-item">
+          <div class="file-info">
+            <span class="file-icon">📄</span>
+            <div>
+              <div class="file-name">WHITE-SNI-RU-all</div>
+              <div class="file-desc">SNI-список — все домены</div>
+            </div>
+          </div>
+          <div class="actions">
+            <button class="btn btn-copy" onclick="copyUrl('white/sni-all')">📋 Копировать URL</button>
+            <a href="https://raw.githubusercontent.com/Kirillo4ka/eavevpn-configs/main/WHITE-SNI-RU-all.txt" class="btn btn-view" target="_blank">👁 Просмотр</a>
+            <a href="https://raw.githubusercontent.com/Kirillo4ka/eavevpn-configs/main/WHITE-SNI-RU-all.txt" class="btn btn-import">⬇ Импорт</a>
+          </div>
+        </div>
+        <div class="file-item">
+          <div class="file-info">
+            <span class="file-icon">📱</span>
+            <div>
+              <div class="file-name">Vless-Reality-White-Lists-Rus-Mobile</div>
+              <div class="file-desc">VLESS Reality — мобильный white-list</div>
+            </div>
+          </div>
+          <div class="actions">
+            <button class="btn btn-copy" onclick="copyUrl('white/vless-reality-mobile')">📋 Копировать URL</button>
+            <a href="https://raw.githubusercontent.com/Kirillo4ka/eavevpn-configs/main/Vless-Reality-White-Lists-Rus-Mobile.txt" class="btn btn-view" target="_blank">👁 Просмотр</a>
+            <a href="https://raw.githubusercontent.com/Kirillo4ka/eavevpn-configs/main/Vless-Reality-White-Lists-Rus-Mobile.txt" class="btn btn-import">⬇ Импорт</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="url-box">
+      <h3>📋 Как импортировать в Happ:</h3>
+      <code>https://eavevpn.github.io/black/all</code>
+      <p style="margin-top:10px;color:#8b949e;font-size:0.9rem;">
+        Нажми "Копировать URL" → открой Happ → Добавить подписку → Вставь URL
+      </p>
+    </div>
+  </div>
+
+  <div class="toast" id="toast">✅ URL скопирован!</div>
+
+  <script>
+    function copyUrl(path) {
+      const url = `https://eavevpn.github.io/${path}`;
+      navigator.clipboard.writeText(url).then(() => {
+        const toast = document.getElementById('toast');
+        toast.classList.add('show');
+        setTimeout(() => toast.classList.remove('show'), 2000);
+      });
+    }
+  </script>
+</body>
+</html>
